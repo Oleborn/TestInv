@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.util.HashMap;
 
-public class MyFirstTestCase {
+public class MyTestTwo {
     private String downloadFolder;
     private WebDriver driver;
     @Test
@@ -20,10 +20,13 @@ public class MyFirstTestCase {
         opt.setExperimentalOption("prefs", chromePrefs);
         opt.addArguments("start-maximized");
         driver = new ChromeDriver(opt);
-        driver.get("https://vk.com");
-        WebElement input = driver.findElement(By.xpath("//input[@id='index_email']"));
-        input.sendKeys("89234731274");
-        WebElement button = driver.findElement(By.cssSelector("#index_login > div > form > button"));
+        driver.get("https://www.saucedemo.com");
+        WebElement inputLogin = driver.findElement(By.xpath("//input[@id='user-name']"));
+        inputLogin.sendKeys("standard_user");
+        WebElement inputPassword = driver.findElement(By.id("password"));
+        inputPassword.sendKeys("secret_sauce");
+        WebElement button = driver.findElement(By.cssSelector("#login-button"));
+        button.click();
         //driver.quit();
         try {
             Thread.sleep(2000);

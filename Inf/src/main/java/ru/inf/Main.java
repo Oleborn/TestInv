@@ -5,11 +5,8 @@ import javax.swing.*;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
-        //System.out.println("Hello");
-        Say("Hello1");
+    public void one() {
+        System.out.printf("KKK");
     }
-    public static void Say (String message) {
-        System.out.println(message);
-    }
+
 }
