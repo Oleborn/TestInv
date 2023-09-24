@@ -18,4 +18,7 @@ public class UserAction {
         return new WebDriverWait(this.webDriver, 10, TimeUnit.SECONDS.ordinal())
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectorsElement.getValue())));
     }
+    public void goTo(PageURL pageURL) {
+        this.webDriver.get(pageURL.getValue());
+    }
 }

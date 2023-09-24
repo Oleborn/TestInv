@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.HashMap;
 
-public class myTestTwo {
+public class MyTestTwo {
     private String downloadFolder;
     private WebDriver driver;
     @Test

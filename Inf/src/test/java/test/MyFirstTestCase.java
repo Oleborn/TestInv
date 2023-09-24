@@ -20,10 +20,7 @@ public class MyFirstTestCase {
         opt.addArguments("start-maximized");
         driver = new ChromeDriver(opt);
         driver.get("https://vk.com");
-        //WebElement input = driver.findElement(By.xpath("//input[@id='index_email']"));
-        //input.sendKeys("89234731274");
-        //WebElement button = driver.findElement(By.cssSelector("#index_login > div > form > button"));
-        //driver.quit();
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

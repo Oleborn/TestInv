@@ -19,9 +19,7 @@ public class Precondition {
         this.initProperties();
     }
 
-    public void goTo(PageURL pageURL) {
-        this.webDriver.get(pageURL.getValue());
-    }
+
     private void initProperties (){
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         Properties properties = new Properties();

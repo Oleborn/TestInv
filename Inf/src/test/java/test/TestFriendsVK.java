@@ -1,19 +1,25 @@
 package test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestFriendsVK {
-    private WebDriver driver;
-    private UserAction userAction;
+    private WebDriver driver; //создается приватная (используемая только в этом классе) переменная driver интерфейса WebDriver
+    // на переменной driver завязан запуск браузера
+    // передача параметров запуска в UserAction
+    // передача параметров запуска в Precondition
+    private UserAction userAction;//создается приватная (используемая только в этом классе) переменная userAction класса (с параметрами) UserAction
+    private Precondition precondition;//создается приватная (используемая только в этом классе) переменная precondition класса (с параметрами) Precondition
 
-    private Precondition precondition;
-
-    @BeforeMethod
-    public void init() {
+    @BeforeMethod //аннотация позволяющая запускать данный метод перед запуском остального
+    public void init()
+    {
         WebDriverConfiguration configuration = new WebDriverConfiguration();
+        //инициализация !!новой переменной!! configuration класса WebDriverConfiguration из другого места
         this.driver = configuration.initBrowser();
+        //инициализация (запуск) переменной driver именно из этого класса (this) с параметрами configuration и initBrowser
         this.userAction = new UserAction(this.driver);
         this.precondition = new Precondition(this.driver);
     }
@@ -21,7 +27,7 @@ public class TestFriendsVK {
     @Test
     public void openBrowser() {
 
-        this.precondition.goTo(PageURL.MAIN);
+        this.userAction.goTo(PageURL.MAIN);
 
         this.userAction.findElement(Selectors.INPUT_LOGIN)
                 .sendKeys(this.precondition.getTestUser().getUserLogin());
