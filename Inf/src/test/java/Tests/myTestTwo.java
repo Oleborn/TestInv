@@ -1,3 +1,5 @@
+package Tests;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,7 @@ public class myTestTwo {
     private String downloadFolder;
     private WebDriver driver;
     @Test
-    public void openBrowser () {
+    public void openBrowser() {
         WebDriverManager.chromedriver().setup();
         HashMap<String, Object> chromePrefs = new HashMap<>();
         chromePrefs.put("download.default_directory", this.downloadFolder);
