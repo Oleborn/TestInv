@@ -1,4 +1,4 @@
-package test;
+package test_tng;
 
 public enum PageURL {
     MAIN("https://vk.com");

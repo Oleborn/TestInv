@@ -1,4 +1,4 @@
-package test;
+package test_tng;
 
 public enum Selectors {
     INPUT_LOGIN("//*[@id='index_email']"),

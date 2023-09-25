@@ -1,7 +1,6 @@
-package test;
+package test_tng;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -17,7 +16,7 @@ public class TestFriendsVK {
     public void init()
     {
         WebDriverConfiguration configuration = new WebDriverConfiguration();
-        //инициализация !!новой переменной!! configuration класса WebDriverConfiguration из другого места
+        //инициализация !!объекта класса!! configuration класса WebDriverConfiguration из другого места
         this.driver = configuration.initBrowser();
         //инициализация (запуск) переменной driver именно из этого класса (this) с параметрами configuration и initBrowser
         this.userAction = new UserAction(this.driver);
