@@ -22,7 +22,6 @@ public class TestFriendsVK {
         this.userAction = new UserAction(this.driver);
         this.precondition = new Precondition(this.driver);
     }
-
     @Test
     public void openBrowser() {
 
