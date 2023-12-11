@@ -4,13 +4,12 @@ import Probe_test.stend.ActionURL;
 import Probe_test.stend.ActionsUser;
 import Probe_test.stend.InitBrowserDriver;
 import Probe_test.stend.ListSelectors;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestSauseDemo {
+public class TestSauseDemo_PozRegistration {
     private WebDriver driver;
     private ActionsUser actionsUser;
 
@@ -22,22 +21,22 @@ public class TestSauseDemo {
     }
 
     @Test
-    public void stepTestCase() {
+    private void stepTestCase() {
 
         driver.get(ActionURL.SAUSEDEMO.getValue());
 
         this.actionsUser.findElement(ListSelectors.ENTRYFIELDLOGIN).sendKeys(
                 "standard_user");
 
-        Assert.assertEquals(this.actionsUser.findElement(ListSelectors.ENTRYFIELDLOGIN).getAttribute("value"), "standard_user", "не верно введено имя пользователя");
+        //Assert.assertEquals(this.actionsUser.findElement(ListSelectors.ENTRYFIELDLOGIN).getAttribute("value"), "standard_user", "не верно введено имя пользователя");
 
         this.actionsUser.findElement(ListSelectors.ENTRYFIELDPASSWORD).sendKeys("secret_sauce");
 
-
-
         this.actionsUser.findElement(ListSelectors.BUTTONLOGIN).click();
 
-        driver.quit();
+        Assert.assertEquals (driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html", "Страница магазина не загрузилась");
+
+        //driver.quit();
 
         try {
             Thread.sleep(2000);

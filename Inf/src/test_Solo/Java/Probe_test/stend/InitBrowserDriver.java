@@ -1,4 +1,4 @@
-package Probe_test;
+package Probe_test.stend;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

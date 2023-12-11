@@ -21,4 +21,8 @@ public class UserAction {
     public void goTo(PageURL pageURL) {
         this.webDriver.get(pageURL.getValue());
     }
+    public WebElement findElements  (Selectors selectorsElement) {
+        return new WebDriverWait(this.webDriver, 10, TimeUnit.SECONDS.ordinal())
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectorsElement.getValue())));
+    }
 }

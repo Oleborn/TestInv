@@ -1,4 +1,4 @@
-package Probe_test;
+package Probe_test.stend;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

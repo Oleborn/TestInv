@@ -1,8 +1,12 @@
 package test_tng;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class TestFriendsVK {
     private WebDriver driver; //создается приватная (используемая только в этом классе) переменная driver интерфейса WebDriver
@@ -41,10 +45,16 @@ public class TestFriendsVK {
 
         this.userAction.findElement(Selectors.BUTTON_FRIENDS).click();
 
-        this.userAction.findElement(Selectors.BUTTON_ANATOLY).click();
+        //this.userAction.findElement(Selectors.BUTTON_ANATOLY).click();
 
-        System.out.println("Количество друзей Толяна - " + this.userAction.findElement(Selectors.ELEMENT_QUALITY_FRIENDS).getText());
-        driver.quit();
+        //this.userAction.findElements(Selectors.ALLFRIENDS).getText();
+
+        List<WebElement> findAllFriends = driver.findElements(By.xpath("//a [@href='/there.isno.fear.only.pain']"));
+        System.out.println(findAllFriends);
+        //System.out.println(this.userAction.findElements(Selectors.ALLFRIENDS).getText());
+
+        //System.out.println("Количество друзей Толяна - " + this.userAction.findElement(Selectors.ELEMENT_QUALITY_FRIENDS).getText());
+        //driver.quit();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

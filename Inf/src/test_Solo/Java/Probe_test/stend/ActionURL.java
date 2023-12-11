@@ -1,4 +1,4 @@
-package Probe_test;
+package Probe_test.stend;
 
 public enum ActionURL {
     SAUSEDEMO ("https://www.saucedemo.com");

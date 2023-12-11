@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestSauseDemo_NoPassword {
+public class TestSauseDemo_LockedUser {
     private WebDriver driver;
     private ActionsUser actionsUser;
 
@@ -27,12 +27,14 @@ public class TestSauseDemo_NoPassword {
         String titlePage = driver.getCurrentUrl();
 
         this.actionsUser.findElement(ListSelectors.ENTRYFIELDLOGIN).sendKeys(
-                "standard_user");
+                "locked_out_user");
+
+        this.actionsUser.findElement(ListSelectors.ENTRYFIELDPASSWORD).sendKeys("secret_sauce");
 
         this.actionsUser.findElement(ListSelectors.BUTTONLOGIN).click();
 
         Assert.assertEquals(this.actionsUser.findElement(ListSelectors.MESSAGE_OF_ERROR).getText(),
-                "Epic sadface: Password is required", "текст ошибки не верен или его нет");
+                "Epic sadface: Sorry, this user has been locked out.", "текст ошибки неверен или его нет");
 
         Assert.assertEquals (titlePage, driver.getCurrentUrl(), "Страница магазина загрузилась - это ошибка");
 

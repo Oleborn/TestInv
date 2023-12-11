@@ -7,8 +7,9 @@ public enum Selectors {
     INPUT_PASSWORD("/html/body/div[1]/div/div/div/div/div[1]/div[2]/div/div/div/form/div[1]/div[3]/div/div/input"),
     BUTTON_PASSWORD("/html/body/div[1]/div/div/div/div/div[1]/div[2]/div/div/div/form/div[2]/button/span[1]/span"),
     BUTTON_FRIENDS("//*[@id='l_fr']"),
-    BUTTON_ANATOLY("/html/body/div[11]/div/div/div[2]/div[2]/div[3]/div/div/div[2]/div/div[2]/div[4]/div[1]/div[1]/div[3]/div[3]/div[1]/a"),
-    ELEMENT_QUALITY_FRIENDS ("/html/body//section[1]/a/header//span[2]");
+    BUTTON_ANATOLY("//*[@id='friends_user_row43511416']/div[3]/div[1]/a"),
+    ELEMENT_QUALITY_FRIENDS ("/html/body//section[1]/a/header//span[2]"),
+    ALLFRIENDS ("//*[@class ='friends_field friends_field_title']");
 
     private String value;
 
